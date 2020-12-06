@@ -44,7 +44,7 @@ Stage: jupyter
 # copy Conda environment file
 environment.yml /environment.yml
 postBuild /postBuild
-jpyExec /usr/local/bin/jpyExec
+start /usr/local/bin/
 
 %post
 chmod +x /usr/local/bin/jpyExec

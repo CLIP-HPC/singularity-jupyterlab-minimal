@@ -1,8 +1,7 @@
 @Library('vbc-cicd@repo2docker') _
 
 buildRepo2Docker([
-     pushRegistryNamespace: 'repo2docker',
-     pushRegistry: 'artifactory.imp.ac.at',
+  imageName: 'jupyter-minimal-conda'
 ])
 
 // buildSingularityImage([
