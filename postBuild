@@ -1,14 +1,21 @@
 #!/bin/sh
-
-# take care of extensions, if any
+# take care of source extensions
+# NOTE: not required for pre-packaged conda extensions (source extensions only)
+# if jupyter lab starts and shows "it needs to be re-built" then these are required
 EXTENSIONS=""
 
-for EXT in $EXTENSIONS; do
-echo "installing $EXT"
-jupyter labextension install --no-build $EXT
-done
 
-echo "rebuild jupyter lab"
-jupyter lab build
-jupyter lab clean -y
+if [ -z "$EXTENSIONS" ]; then
+  echo "no extensions to install."
+else
+  echo "installing extensions, nodejs is required"
 
+  for EXT in $EXTENSIONS; do
+    echo "installing $EXT"
+    jupyter labextension install --no-build $EXT
+  done
+
+  echo "rebuild jupyter lab"
+  jupyter lab build
+  jupyter lab clean -y
+fi
