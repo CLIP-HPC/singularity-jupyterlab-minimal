@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# take care of extensions
-EXTENSIONS="@jupyterlab/hub-extension @jupyter-widgets/jupyterlab-manager"
+# take care of extensions, if any
+EXTENSIONS=""
 
 for EXT in $EXTENSIONS; do
 echo "installing $EXT"
@@ -11,3 +11,4 @@ done
 echo "rebuild jupyter lab"
 jupyter lab build
 jupyter lab clean -y
+
