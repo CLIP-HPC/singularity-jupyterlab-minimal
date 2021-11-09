@@ -3,7 +3,7 @@ prefix: /srv/jupyter
 channels:
   - conda-forge
 dependencies:
-  - jupyterlab=3.0.16
+  - jupyterlab=3.2.2
   - pip:
       - batchspawner==1.0.1
   # add your own plugins here
